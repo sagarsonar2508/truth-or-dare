@@ -1,4 +1,4 @@
-package com.truth_or_dare
+package goldsmith.truth_or_dare
 
 import android.app.Application
 import com.facebook.react.PackageList
