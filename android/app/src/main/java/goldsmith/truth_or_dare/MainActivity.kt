@@ -1,4 +1,4 @@
-package goldsmith.truth_or_dare
+package goldsmith.truth_dare
 
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate
