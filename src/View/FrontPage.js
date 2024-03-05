@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { Icon } from 'react-native-elements'
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 
 const FrontPage = () => {
   const navigation = useNavigation();
@@ -34,6 +36,8 @@ const FrontPage = () => {
             <TouchableOpacity style={styles.button} onPress={() => setIsMusicOn(!isMusicOn)}>
                 <Text>Music</Text>
               {/* <MaterialCommunityIcons name="music-off" size={45} color="white"/> */}
+              {/* <FontAwesomeIcon icon={ faMugSaucer } /> */}
+              
             </TouchableOpacity>
           )}
           {!isMusicOn && (
@@ -41,7 +45,7 @@ const FrontPage = () => {
             {/* <MaterialCommunityIcons name="music" size={45} color="white"/> */}
           </TouchableOpacity>
           )}
-          <View>
+          <View> 
           <TouchableOpacity style={styles.button} onPress={handlePlayButtonClick}>
             <Text>Play</Text>
             {/* <Ionicons name="md-play" size={45} color="white" /> */}
@@ -57,7 +61,7 @@ const FrontPage = () => {
     </View>
   );
 };
-
+ 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
