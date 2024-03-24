@@ -9,6 +9,11 @@ import Page3 from './Levels/crazy';
 import Page4 from './Levels/extreme';
 // ... (import statements)
 
+import Icon from 'react-native-vector-icons/AntDesign';
+import Icon1 from 'react-native-vector-icons/MaterialCommunityIcons';
+import Icon2 from 'react-native-vector-icons/FontAwesome5'
+import Icon3 from 'react-native-vector-icons/Entypo'
+
 const MainComponent = ({ navigation }) => {
   const handleSettingButtonClick = () => {
     // Navigate to the settings page or perform the desired action
@@ -35,14 +40,12 @@ const MainComponent = ({ navigation }) => {
 
       {/* Purple Button (left) */}
       <TouchableOpacity style={styles.peopleButton} onPress={handlePeopleButtonnClick}>
-      <Text>person</Text>
-        {/* <Ionicons name="md-person" size={24} color="white" /> */}
+        <Icon name="user" size={24} color="white" />
       </TouchableOpacity>
 
       {/* Settings Button (right) */}
       <TouchableOpacity style={styles.settingsButton} onPress={handleSettingButtonClick}>
-      <Text>Settings</Text>
-        {/* <Ionicons name="md-settings" size={24} color="white" /> */}
+        <Icon name="setting" size={24} color="white" />
       </TouchableOpacity>
     </View>
   );

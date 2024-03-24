@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, TextInput, StyleSheet, ScrollView } from 'react-native';
-//import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { useDispatch } from 'react-redux';
 import { setPlayerList, setCurrentPayerID } from '../Redux Store/store';
+import Icon from 'react-native-vector-icons/AntDesign';
+import Icon1 from 'react-native-vector-icons/MaterialCommunityIcons';
+import Icon2 from 'react-native-vector-icons/FontAwesome5'
+import Icon3 from 'react-native-vector-icons/Entypo'
 
 const SelectPlayers = () => {
   const navigation = useNavigation();
@@ -63,7 +66,11 @@ const SelectPlayers = () => {
                   ]}
                   onPress={() => handleGenderChange(player.id, gender)}
                 >
-                  <Text>{gender === 'male' ? 'M' : 'W'}</Text>
+                  <Text>{gender === 'male' ? (
+                    <Icon2 name='male' size={22} color="white"/>
+                  ) : (
+                    <Icon2 name='female' size={22} color="white"/>
+                  )}</Text>
                   {/* <Ionicons name={gender === 'male' ? 'md-man' : 'md-woman'} size={32} color="white" /> */}
                 </TouchableOpacity>
               ))}
@@ -81,8 +88,7 @@ const SelectPlayers = () => {
               style={styles.cancelButton}
               onPress={() => removePlayer(player.id)}
             >
-              <Text>Remove</Text>
-              {/* <Ionicons name="md-close" size={25} color="#fff" /> */}
+              <Icon name="close" size={25} color="#fff" />
             </TouchableOpacity>
           </View>
         ))}
@@ -90,13 +96,11 @@ const SelectPlayers = () => {
 
       <View style={styles.buttonContainer}>
         <TouchableOpacity style={styles.button} onPress={addPlayer}>
-        <Text>Add Player</Text>
-          {/* <Ionicons name="md-add" size={42} color="white" /> */}
+          <Icon name="adduser" size={42} color="white" />
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.button}  onPress={handlePlayButtonClick}>
-        <Text>Play</Text>
-          {/* <Ionicons name="md-play" size={42} color="white" /> */}
+          <Icon3 name="controller-play" size={42} color="white" />
         </TouchableOpacity>
       </View>
     </View>

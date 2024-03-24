@@ -12,8 +12,6 @@ import { useNavigation } from "@react-navigation/native";
 
 const settingsList = [
   { id: "purchases", label: "Purchases", type: "link", icon: "save", color: "#ff1493" },
-  { id: "darkMode", label: "Dark Mode", type: "toggle", icon: "moon", color: "#ff1493" },
-  { id: "showCollaborators", label: "Show Collaborators", icon: "users", color: "#ff1493" },
   { id: "reportBug", label: "Report Bug", type: "link", icon: "flag", color: "#ff1493" },
   { id: "contactUs", label: "Contact Us", type: "link", icon: "mail", color: "#ff1493" },
 ];

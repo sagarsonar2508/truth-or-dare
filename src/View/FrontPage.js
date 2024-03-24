@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { Icon } from 'react-native-elements'
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
+import Svg, {Use, Image} from 'react-native-svg'
+import Icon from 'react-native-vector-icons/AntDesign';
+import Icon1 from 'react-native-vector-icons/MaterialCommunityIcons';
+import Icon3 from 'react-native-vector-icons/Entypo'
 
 const FrontPage = () => {
   const navigation = useNavigation();
@@ -34,26 +37,21 @@ const FrontPage = () => {
         <View style={styles.buttonContainer}>
           {isMusicOn && (
             <TouchableOpacity style={styles.button} onPress={() => setIsMusicOn(!isMusicOn)}>
-                <Text>Music</Text>
-              {/* <MaterialCommunityIcons name="music-off" size={45} color="white"/> */}
-              {/* <FontAwesomeIcon icon={ faMugSaucer } /> */}
-              
+              <Icon1 name="music-off" size={45} color="white"/>
             </TouchableOpacity>
           )}
           {!isMusicOn && (
           <TouchableOpacity style={styles.button} onPress={() => setIsMusicOn(!isMusicOn)}>
-            {/* <MaterialCommunityIcons name="music" size={45} color="white"/> */}
+            <Icon1 name="music" size={45} color="white"/>
           </TouchableOpacity>
           )}
           <View> 
           <TouchableOpacity style={styles.button} onPress={handlePlayButtonClick}>
-            <Text>Play</Text>
-            {/* <Ionicons name="md-play" size={45} color="white" /> */}
+            <Icon3 name="controller-play" size={45} color="white" />
           </TouchableOpacity>
           </View>
           <TouchableOpacity style={styles.button} onPress={handleSettingButtonClick}>
-          <Text>Settings</Text>
-            {/* <Ionicons name="md-settings" size={45} color="white" /> */}
+            <Icon name="setting" size={45} color="white" />
           </TouchableOpacity>
 
         </View>
@@ -90,7 +88,7 @@ const styles = StyleSheet.create({
     marginTop: 90, // Add margin to separate from the title
   },
   button: {
-    backgroundColor: '#ff1493', // Pink color
+    backgroundColor: '#ff1493', // Pink color ff1493
     padding: 15,
     borderRadius: 50,
     marginBottom: 10,
@@ -104,6 +102,11 @@ const styles = StyleSheet.create({
     fontSize: 44,
     marginHorizontal: 10,
     transform: [{ rotate: '-15deg' }], // Slightly inclined emojis
+  },
+  frontPagebtnImage: {
+    width: 40,
+    height: 40,
+    resizeMode: 'cover',
   },
 });
 
