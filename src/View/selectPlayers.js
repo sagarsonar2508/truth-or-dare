@@ -56,7 +56,7 @@ const SelectPlayers = () => {
           <View 
             style={[
               styles.inner,
-              {width: size || 40, height: size || 40, borderRadius: size/2 || 40/2},
+              {width: size , height: size, borderRadius: size/2},
               style
             ]}
           >

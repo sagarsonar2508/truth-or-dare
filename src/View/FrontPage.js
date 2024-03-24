@@ -22,7 +22,7 @@ const FrontPage = () => {
           <View 
             style={[
               styles.inner,
-              {width: size || 40, height: size || 40, borderRadius: size/2 || 40/2},
+              {width: size, height: size, borderRadius: size/2},
               style
             ]}
           >
@@ -49,7 +49,7 @@ const FrontPage = () => {
       <View style={styles.content}>
 
         <View style={styles.imageContainer}>
-          <NeuMorph size={20}>
+          <NeuMorph size={30}>
             <Image 
               source={frontImage}
               style={[styles.image,{width: imageWidth}]}
