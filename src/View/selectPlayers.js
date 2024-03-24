@@ -49,6 +49,24 @@ const SelectPlayers = () => {
     );
   };
 
+  const NeuMorph = ({ children, size, style}) =>{
+    return(
+      <View style = {styles.topShadow}>
+        <View style = {styles.bottomShadow}>
+          <View 
+            style={[
+              styles.inner,
+              {width: size || 40, height: size || 40, borderRadius: size/2 || 40/2},
+              style
+            ]}
+          >
+            {children}
+          </View>
+        </View>
+      </View>
+    )
+  };
+
   return (
     <View style={styles.container}>
       <Text style={styles.header}>{players.length} Players</Text>
@@ -62,7 +80,7 @@ const SelectPlayers = () => {
                   key={gender}
                   style={[
                     styles.genderIcon,
-                    { backgroundColor: player.gender === gender ? '#ff1493' : 'transparent' },
+                    { backgroundColor: player.gender === gender ? '#00235B' : 'transparent' },
                   ]}
                   onPress={() => handleGenderChange(player.id, gender)}
                 >
@@ -88,7 +106,9 @@ const SelectPlayers = () => {
               style={styles.cancelButton}
               onPress={() => removePlayer(player.id)}
             >
-              <Icon name="close" size={25} color="#fff" />
+              <NeuMorph size={48}>
+                <Icon name="close" size={25} color="#fff" />
+              </NeuMorph>
             </TouchableOpacity>
           </View>
         ))}
@@ -96,11 +116,15 @@ const SelectPlayers = () => {
 
       <View style={styles.buttonContainer}>
         <TouchableOpacity style={styles.button} onPress={addPlayer}>
-          <Icon name="adduser" size={42} color="white" />
+          <NeuMorph size={68}>
+            <Icon name="adduser" size={32} color="#FFEDD8" />
+          </NeuMorph>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.button}  onPress={handlePlayButtonClick}>
-          <Icon3 name="controller-play" size={42} color="white" />
+          <NeuMorph size={68}>
+            <Icon3 name="controller-play" size={32} color="#FFEDD8" />
+          </NeuMorph>
         </TouchableOpacity>
       </View>
     </View>
@@ -112,12 +136,12 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#000',
+    backgroundColor: '#00235B',
     opacity: 0.9,
   },
   header: {
     fontSize: 29,
-    color: '#ff1493',
+    color: '#FFEDD8',
     marginBottom: 0,
     marginTop: 40,
   },
@@ -143,7 +167,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 5,
   },
   nameInput: {
-    backgroundColor: '#fff',
+    backgroundColor: '#FFEDD8',
     padding: 10,
     borderRadius: 15,
     flex: 1,
@@ -154,11 +178,11 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   button: {
-    backgroundColor: '#ff1493',
-    padding: 15,
+    // backgroundColor: '#00235B',
+    padding: 5,
     borderRadius: 50,
+    marginBottom: 10,
     marginHorizontal: 10,
-    marginBottom: 10
   },
   line: {
     width: '30%', 
@@ -169,6 +193,32 @@ const styles = StyleSheet.create({
   cancelButton: {
     borderRadius: 30,
     marginLeft: 10,
+  },
+  inner: {
+    backgroundColor: "#00235B",
+    alignItems: "center",
+    justifyContent: "center",
+    borderColor: "#00235B",
+    borderWidth: 1,
+    elevation: 15, 
+  },
+  topShadow: {
+    shadowOffset: {
+      width: -12,
+      height: -12
+    },
+    shadowOpacity: 0.5,
+    shadowRadius: 12,
+    shadowColor: "#211951",
+  },
+  bottomShadow: {
+    shadowOffset:{
+      width: 12,
+      height: 12
+    },
+    shadowOpacity: 0.5,
+    shadowRadius: 12,
+    shadowColor: "#211951"
   },
 });
 

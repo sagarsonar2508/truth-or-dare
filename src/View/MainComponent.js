@@ -24,6 +24,24 @@ const MainComponent = ({ navigation }) => {
     navigation.navigate('selectPayers');
   };
 
+  const NeuMorph = ({ children, size, style}) =>{
+    return(
+      <View style = {styles.topShadow}>
+        <View style = {styles.bottomShadow}>
+          <View 
+            style={[
+              styles.inner,
+              {width: size || 40, height: size || 40, borderRadius: size/2 || 40/2},
+              style
+            ]}
+          >
+            {children}
+          </View>
+        </View>
+      </View>
+    )
+  };
+
   return (
     <View style={styles.container}>
       <Swiper
@@ -85,6 +103,32 @@ const styles = StyleSheet.create({
     backgroundColor: '#ff1493',
     padding: 10,
     borderRadius: 20,
+  },
+  inner: {
+    backgroundColor: "#00235B",
+    alignItems: "center",
+    justifyContent: "center",
+    borderColor: "#00235B",
+    borderWidth: 1,
+    elevation: 15, 
+  },
+  topShadow: {
+    shadowOffset: {
+      width: -12,
+      height: -12
+    },
+    shadowOpacity: 0.5,
+    shadowRadius: 12,
+    shadowColor: "#211951",
+  },
+  bottomShadow: {
+    shadowOffset:{
+      width: 12,
+      height: 12
+    },
+    shadowOpacity: 0.5,
+    shadowRadius: 12,
+    shadowColor: "#211951"
   },
 });
 
